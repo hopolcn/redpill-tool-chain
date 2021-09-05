@@ -5,6 +5,8 @@
     "sn": "1780PDN123456",
     "mac1": "E2C45CC9EEEE"
   },
-  "synoinfo": {},
-  "ramdisk_copy": {}
+  "synoinfo": {
+    "supportsystemperature": "no",
+    "supportsystempwarning": "no"
+  }
 }
