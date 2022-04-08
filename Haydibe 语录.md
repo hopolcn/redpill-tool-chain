@@ -1,4 +1,4 @@
-### redpill-loader - create a proxmox vm from cli
+### 1. redpill-loader - create a proxmox vm from cli
 
 ```shell
 # set vm id
@@ -32,7 +32,7 @@ qm create ${id} \
 pvesm alloc local-lvm ${id} vm-${id}-disk-0 100G
 ```
 
-### redpill-loader - proxmox user_config.json for rploader.sh
+### 2. redpill-loader - proxmox user_config.json for rploader.sh
 
 ```
 {
@@ -53,7 +53,7 @@ pvesm alloc local-lvm ${id} vm-${id}-disk-0 100G
 }
 ```
 
-### redpill-loader - bring your own configuration
+### 3 .redpill-loader - bring your own configuration
 
 ```
 1. in tc: open a terminal
@@ -77,5 +77,17 @@ pvesm alloc local-lvm ${id} vm-${id}-disk-0 100G
 10. ssh-host (while connected to tc): filetool.sh -b sdb3 # persist tc configuration back to tc partition. Your tc partition might be on a different disk.. change sdb to your device if needed.
 
 11. ssh-host (while connected to tc): sudo reboot
+```
+
+
+
+### 4. ext-manager.sh
+
+```
+./rploader.sh download bromolow-7.0.1-42218
+
+./redpill-load/ext-manager.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/qla2xxx/rpext-index.json
+
+./rploader.sh build bromolow-7.0.1-42218 static
 ```
 
